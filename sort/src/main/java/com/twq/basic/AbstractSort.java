@@ -13,4 +13,8 @@ public abstract class AbstractSort<E extends Comparable<E>>
         return e1.compareTo(e2) < 0;
     }
 
+    protected boolean bigger(E e1, E e2) {
+        return e1.compareTo(e2) > 0;
+    }
+
 }
