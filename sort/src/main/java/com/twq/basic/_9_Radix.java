@@ -8,6 +8,15 @@ package com.twq.basic;
  */
 public class _9_Radix {
 
+    /**
+     *  时间复杂度和计数排序一样是 O(n + k)
+     *
+     *  但是基数排序运行 d 轮计数排序（其中每个元素由最多 d 个数字组成）。
+     *  因此有效运行时间是 O(d⋅(n+k))
+     *
+     *  空间复杂度等于 O(n + k) ，因为 k = 10，所以空间复杂度约等于 O(n)
+     * @param nums
+     */
     public void sort(int[] nums) {
         // 1. 找到最大值
         int max = nums[0];
