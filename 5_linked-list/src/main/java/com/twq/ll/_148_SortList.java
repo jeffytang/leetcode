@@ -1,9 +1,16 @@
-package com.twq.sort;
+package com.twq.ll;
 
 
 /**
- *  要求：在 O(nlogn) 时间复杂度和常数级空间复杂度下，对链表进行排序。
- *  方案：对链表进行归并排序(而且不能使用递归)
+ *  在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+ *
+ * 输入: 4->2->1->3
+ * 输出: 1->2->3->4
+ *
+ * 输入: -1->5->3->4->0
+ * 输出: -1->0->3->4->5
+ *
+ * 链接：https://leetcode-cn.com/problems/sort-list/
  */
 public class _148_SortList {
     public ListNode sortList(ListNode head) {
@@ -28,7 +35,7 @@ public class _148_SortList {
                 ListNode left = curr;
                 // 分割得到右边链表
                 ListNode right = split(left, step);
-                // 得到下次处理的链表头
+                // 分割得到下次处理的链表头
                 curr = split(right, step);
                 // 合并 left 和 right 链表
                 prev = merge(left, right, prev);
