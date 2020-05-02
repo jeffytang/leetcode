@@ -1,5 +1,7 @@
 package com.twq.bt;
 
+import com.twq.TreeNode;
+
 /**
  * 相同的树
  *
