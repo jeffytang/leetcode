@@ -1,4 +1,4 @@
-package com.twq.sort.basic;
+package com.twq.sort;
 
 
 import java.util.HashMap;
