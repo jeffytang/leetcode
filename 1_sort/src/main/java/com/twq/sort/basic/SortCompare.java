@@ -11,7 +11,7 @@ public class SortCompare {
     public static long time(String sort, Integer[] data) {
         Stopwatch timer = Stopwatch.createStarted();
         if (sort.equals("selection")) new _1_Selection<Integer>().sort(data);
-        if (sort.equals("insertion")) new _2_Insertion<Integer>().sort(data);
+        if (sort.equals("insertion")) new _2_1_Insertion<Integer>().sort(data);
         if (sort.equals("shell")) new _3_Shell<Integer>().sort(data);
         return timer.elapsed().toMillis();
     }

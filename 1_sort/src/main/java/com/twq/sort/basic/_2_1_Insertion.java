@@ -6,7 +6,7 @@ package com.twq.sort.basic;
  *  插入排序对于部分有序的数组十分高效，也适合小规模数组
  * @param <E>
  */
-public class _2_Insertion<E extends Comparable<E>> extends AbstractSort<E> {
+public class _2_1_Insertion<E extends Comparable<E>> extends AbstractSort<E> {
 
     /**
      * 原始数组         34 8 64 51 32 21    移动的位置

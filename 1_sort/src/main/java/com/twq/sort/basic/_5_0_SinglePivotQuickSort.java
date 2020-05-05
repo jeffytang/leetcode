@@ -2,7 +2,7 @@ package com.twq.sort.basic;
 
 import java.util.Arrays;
 
-public class _5_Quick<E extends Comparable<E>> extends AbstractSort<E> {
+public class _5_0_SinglePivotQuickSort<E extends Comparable<E>> extends AbstractSort<E> {
 
     private class PivotSegment {
         public int less;
@@ -87,7 +87,7 @@ public class _5_Quick<E extends Comparable<E>> extends AbstractSort<E> {
     }
 
     public static void main(String[] args) {
-        _5_Quick quick = new _5_Quick();
+        _5_0_SinglePivotQuickSort quick = new _5_0_SinglePivotQuickSort();
         Integer[] data = {23, 1, 2, 1, 4, 2, 55, 22};
         quick.sort(data);
 
