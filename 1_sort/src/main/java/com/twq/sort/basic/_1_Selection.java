@@ -27,4 +27,13 @@ public class _1_Selection<E extends Comparable<E>> extends AbstractSort<E> {
             swap(data, i, min);
         }
     }
+
+        /*
+            稳定性：选择排序每次都要找剩余未排序元素中的最小值，并和前面的元素交换位置，这样破坏了稳定性
+            时间复杂度：O(1)
+            空间复杂度：
+                    最好的情况是，要排序的数组已经是有序的，时间复杂度 O(n)
+                    最坏的情况是，要排序的数组是倒序排列的，时间复杂度 O(n ^ 2)
+                    平均的情况：O(n ^ 2)
+        */
 }

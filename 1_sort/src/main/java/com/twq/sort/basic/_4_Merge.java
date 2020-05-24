@@ -11,6 +11,7 @@ public class _4_Merge<E extends Comparable<E>> extends AbstractSort<E> {
     /**
      *  时间复杂度：O(nlogn)
      *  空间复杂度：O(n)
+     *  稳定性：稳定
      * @param data
      */
     @Override

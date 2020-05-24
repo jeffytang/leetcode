@@ -32,6 +32,7 @@ public class _188_BestTimeToBuyAndSellStock_iv {
 
         if ( k >= len / 2) {
             // 使用贪心算法求解
+            // 因为这个时候交易次数非常的足够我们每次都能获取到利润
             return greedy(prices, len);
         }
 

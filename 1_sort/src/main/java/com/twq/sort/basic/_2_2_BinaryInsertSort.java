@@ -1,9 +1,14 @@
 package com.twq.sort.basic;
 
 /**
- *  二分插入排序
+ *  二分插入排序，是对插入排序的一种优化
  *  如果数据量很少的话，可以使用这种排序。
  *  如果给定的数组的前面已经是排好序的话，使用这种排序算法就更加有效了。
+ *
+ *  算法：
+ *      1. 从数组的开始往后寻找到一段升序的数组，如果这段数组是降序的话，那么将其反转为升序
+ *      2. 返回这段升序数组的长度 runLen，这样 [0, runLen) 是升序的
+ *      3. 依次从 [runLen, length) 中拿出一个元素插入到  [0, runLen) 所应该在的位置上
  *
  *  这个排序需要 O(nlogn) 次比较，元素移动最差为 O(n^2)
  * @param <E>
@@ -12,11 +17,13 @@ public class _2_2_BinaryInsertSort<E extends Comparable<E>> extends AbstractSort
 
     @Override
     public void sort(E[] data) {
+        // 找到一个位置 runLen，使得 [0, runLen] 之间的元素是升序的
         int runLen = countRunAndMakeAscending(data, 0, data.length - 1);
-        binarySort(data, 0, data.length - 1, runLen);
+        // 进行二分插入排序
+        binaryInsertSort(data, 0, data.length - 1, runLen);
     }
 
-    private void binarySort(E[] data, int lo, int hi, int start) {
+    private void binaryInsertSort(E[] data, int lo, int hi, int start) {
         assert lo <= start && start <= hi;
         if (start == lo) {
             start++;
@@ -76,6 +83,7 @@ public class _2_2_BinaryInsertSort<E extends Comparable<E>> extends AbstractSort
      *  返回数组 data 的 [lo, hi] 区间中从 lo 开始 run 的长度
      *  如果 run 是降序的，那么将其转化为升序
      *
+     *  也就是说 [lo, lo+run] 这段区间的元素是升序的
      * @param data
      * @param lo
      * @param hi
