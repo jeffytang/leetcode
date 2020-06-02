@@ -64,4 +64,14 @@ public class _191_NumberOf1Bits {
         }
         return count;
     }
+
+    public int hammingWeight2(int n) {
+        int count = 0;
+        while (n != 0) {
+            int rightOne = n & (~n + 1); // 拿到最后一个 1
+            count++;
+            n ^= rightOne; // 抹掉最后一个 1
+        }
+        return count;
+    }
 }

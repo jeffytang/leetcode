@@ -26,11 +26,11 @@ public class _260_SingleNumber_iii {
         int bitmask = 0;
         for (int num : nums) bitmask ^= num;
 
-        int diff = bitmask & (-bitmask);
+        int diff = bitmask & (-bitmask); // 拿到 bitmask 对应二进制的最后一个 1
 
         int x = 0;
         for (int num : nums) {
-            if ((num & diff) != 0) {
+            if ((num & diff) != 0) { // 找到和 diff 同一个位置上都是 1 的元素
                 x ^= num;
             }
         }
