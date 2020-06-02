@@ -6,7 +6,7 @@ package com.twq.sort.basic;
  *  插入排序对于部分有序的数组十分高效，也适合小规模数组
  *
  * 插入排序的核心思想：取未排序区间中的元素，在已排序区间中找到合适的插入位置将其插入
- * 并保证已排序区间数据一直有序。重复这个过程，知道未排序区间中元素为空，算法结束
+ * 并保证已排序区间数据一直有序。重复这个过程，直到未排序区间中元素为空，算法结束
  *
  * 为什么插入排序比冒泡排序更加的受欢迎？
  * 答：从代码的实现上看，冒泡排序的数据交换要比插入排序的数据移动复杂
@@ -30,6 +30,8 @@ public class _2_1_Insertion<E extends Comparable<E>> extends AbstractSort<E> {
      */
     @Override
     public void sort(E[] data) {
+        if (data == null || data.length <= 1) return;
+
         int n = data.length;
         for (int i = 0; i < n; i++) {
             // 将 data[i] 插入到 a[i-1]、a[i-2]、a[i-3].... 中
@@ -41,6 +43,8 @@ public class _2_1_Insertion<E extends Comparable<E>> extends AbstractSort<E> {
 
     // 减少交换的次数，从而提高插入排序的速度
     public void sort1(E[] data) {
+        if (data == null || data.length <= 1) return;
+
         int n = data.length;
         int j;
         for (int p = 1; p < n; p++) {
@@ -63,5 +67,9 @@ public class _2_1_Insertion<E extends Comparable<E>> extends AbstractSort<E> {
                     最坏的情况是，要排序的数组是倒序排列的，时间复杂度 O(n ^ 2)
                     平均的情况：O(n ^ 2)
         */
+    }
+
+    public static void main(String[] args) {
+        new _2_1_Insertion<Integer>().sort1(new Integer[]{34, 8, 64, 51, 32, 21});
     }
 }

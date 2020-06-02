@@ -11,7 +11,7 @@ public class _0_Bubble<E extends Comparable<E>> extends AbstractSort<E> {
 
     @Override
     public void sort(E[] data) {
-        if (data == null || data.length == 0) return;
+        if (data == null || data.length <= 1) return;
 
         for (int i = 0; i < data.length; i++) {
             boolean hasSwap = false;

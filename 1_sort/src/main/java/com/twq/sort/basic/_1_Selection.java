@@ -18,6 +18,7 @@ public class _1_Selection<E extends Comparable<E>> extends AbstractSort<E> {
      */
     @Override
     public void sort(E[] data) {
+        if (data == null || data.length <= 1) return;
         int n = data.length;
         for (int i = 0; i < n; i++) {
             // 将 data[i] 和 data[i+1...n] 中最小的元素交换
