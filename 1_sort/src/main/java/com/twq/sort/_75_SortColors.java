@@ -20,7 +20,7 @@ public class _75_SortColors {
         for (int num : nums)
             count[num]++;
 
-        // 2. 排序
+        //
         int k = 0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < count[i]; j++)
