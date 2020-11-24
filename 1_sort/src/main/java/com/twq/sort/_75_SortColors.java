@@ -15,7 +15,7 @@ public class _75_SortColors {
     // 时间复杂度：O(n)
     // 空间复杂度：O(1)
     public void sortColors1(int[] nums) {
-        // 1. 计数
+        // 1. 计数 add user
         int[] count = new int[3];
         for (int num : nums)
             count[num]++;
